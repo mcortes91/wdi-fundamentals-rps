@@ -43,67 +43,70 @@ var computerMove = getComputerMove();
 function getWinner(playerMove,computerMove) {
     var winner;
 
-if (playerMove === computerMove) 
-    {
-       winner = 'Tie';
-   } 
- else if (playerMove === "paper") 
-    {
-        if (computerMove === "rock")
+    if (playerMove === computerMove) 
         {
-            winner = 'player';
-        }
-        else 
-        {
-            winner = 'computer';
-            
-        }
-    } 
-else if (playerMove === "scissors") 
-    {
-        if (computerMove === "paper") 
-        {
-            winner = 'player';
+            winner = 'Tie';
         } 
-        else 
+    else if (playerMove === "paper") 
         {
-            winner = 'computer';
-        }
-    }
-else if (playerMove === "rock") 
-    {
-        if (computerMove === "scissors") 
+            if (computerMove === "rock")
+                {
+                    winner = 'player';
+                }
+            else 
+                {
+                    winner = 'computer';
+            
+                }
+        } 
+    else if (playerMove === "scissors") 
         {
-            winner = 'player';
+            if (computerMove === "paper") 
+                {
+                    winner = 'player';
+                } 
+            else 
+                {
+                    winner = 'computer';
+                }
         }
-        else
+    else if (playerMove === "rock") 
         {
-            winner = 'computer';
+            if (computerMove === "scissors") 
+                {
+                    winner = 'player';
+                }
+            else
+                {
+                    winner = 'computer';
+                }
         }
-    }
-else 
-    {
-     console.log("please enter something");   
-    }
+    else 
+        {
+        console.log("please enter something");   
+        }
     
-return winner;
+    return winner;
 }
 
 var champion = getWinner();
 
 function playToFive() {
-  console.log("Let's play Rock, Paper, Scissors");
+    console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
 
-    while ((playerWins || computerWins) < 5 ) {
-        if (champion == 'computer') {
-            computerWins += 1;
+    while ((playerWins || computerWins) < 5 ) 
+        {
+            if (champion == 'computer') 
+                {
+                    computerWins += 1;
+                }
+            else if (champion == 'player') 
+                {
+                    playerWins += 1;
+                }
         }
-        else if (champion == 'player') {
-            playerWins += 1;
-        }
-    }
     // Write code that plays 'Rock, Paper, Scissors' 
     //until either the player or the computer has won five times.
 
